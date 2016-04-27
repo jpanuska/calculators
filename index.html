@@ -1,0 +1,90 @@
+<html ng-app="calculator">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Tool</title>
+</head>
+
+<body>
+    <!--Start of miles to km controller-->
+    <div ng-controller="Milestokm as kmc">
+        <h1>{{kmc.message}}</h1>
+        <input type="number" ng-model="kmc.miles" placeholder="Enter Miles">
+        <button ng-click="kmc.milesToKilos(kmc.miles)">Convert to KM's</button>
+        <span>Result: {{kmc.answer|number: 2}}</span>
+        <br>
+        <input type="number" ng-model="kmc.kilos" placeholder="Enter Kilometers">
+        <button ng-click="kmc.kilosToMiles(kmc.kilos)">Convert to Miles</button>
+        <span>Result: {{kmc.answer2|number:2}}</span>
+    </div>
+    <!--end of miles to km controller-->
+
+    <!--Start  temperature-->
+    <div ng-controller="Temperature as tc">
+        <h1>{{tc.message}}</h1>
+        <input type="number" ng-model="tc.fahr" placeholder="Enter Temp in Fahrenheit">
+        <button ng-click="tc.fahrToCel(tc.fahr)">Convert to Celcius</button>
+        <span>Result: {{tc.answer|number: 2}}</span>
+        <br>
+        <input type="number" ng-model="tc.cel" placeholder="Enter Temp in Celcius">
+        <button ng-click="tc.celToFahr(tc.cel)">Convert to Fahrenheit</button>
+        <span>Result: {{tc.answer2|number:2}}</span>
+    </div>
+    <!--end of temperature-->
+
+    <!--Start of Kilos Pounds conversion-->
+    <div ng-controller="Weight as wc">
+        <h1>{{wc.message}}</h1>
+        <input type="number" ng-model="wc.kilo" placeholder="Enter Weight in Kilos">
+        <button ng-click="wc.kiloToLbs(wc.kilo)">Convert to Pounds</button>
+        <span>Result: {{wc.answer|number: 2}}</span>
+        <br>
+        <input type="number" ng-model="wc.lbs" placeholder="Enter Weight in Pounds">
+        <button ng-click="wc.lbsToKilo(wc.lbs)">Convert to Kilos</button>
+        <span>Result: {{wc.answer2|number:2}}</span>
+    </div>
+    <!--end of Kilos Pounds conversion-->
+
+    <!--Start of Inches Feet conversion-->
+    <div ng-controller="Feet as fc">
+        <h1>{{fc.message}}</h1>
+        <input type="number" ng-model="fc.feet" placeholder="Enter Feet to convert to Inches">
+        <button ng-click="fc.feetToInches(fc.feet)">Convert to Inches</button>
+        <span>Result: {{fc.answer|number: 2}}</span>
+        <br>
+        <input type="number" ng-model="fc.inches" placeholder="Enter Inches to convert to Feet">
+        <button ng-click="fc.inchesToFeet(fc.inches)">Convert to Feet</button>
+        <span>Result: {{fc.answer2|number:2}}</span>
+    </div>
+    <!--end of Inches Feet conversion-->
+
+    <!--Start of BMI Calculation-->
+    <div ng-controller="BMI as bc">
+        <h1>{{bc.message}}</h1>
+        <input type="number" ng-model="bc.weight" placeholder="Enter Your Weight">
+        <br>
+        <input type="number" ng-model="bc.inches" placeholder="Enter Your Height in Inches">
+        <button ng-click="bc.Bmi(bc.weight, bc.inches)">BMI Index Result</button>
+        <span>Result: {{bc.answer2|number:2}}</span>
+    </div>
+    <!--end of BMI Calculation-->
+    
+    <!--Start of Loan Amount Calculator-->
+    <div ng-controller="LoanCalc as lc">
+        <h1>{{lc.message}}</h1>
+        <input type="number" ng-model="lc.principal" placeholder="Enter the total loan amount or principal">
+        <br>
+        <input type="number" ng-model="lc.rate" placeholder="Enter the interest rate of the loan in percent ie 5.2% = 5.2">
+        <br>
+        <input type="number" ng-model="lc.period" placeholder="Enter the number of months of payments">
+        <button ng-click="lc.LoanCal(lc.principal, lc.rate, lc.period)">Loan Balance</button>
+        <span>Result:{{lc.answer9|number:2}}</span>
+    </div>   
+    <!--End of Loan Calculator-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="controllers.js"></script>
+</body>
+
+</html>
